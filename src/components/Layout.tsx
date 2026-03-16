@@ -119,16 +119,6 @@ const HelpPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => (
         </div>
 
         <div className="pt-2 border-t border-gray-100">
-          <div className="p-4 bg-gray-50 border border-gray-100 rounded-2xl">
-            <p className="text-sm font-black text-gray-900 flex items-center gap-2 mb-2">
-              <svg className="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-              AI Models Used
-            </p>
-            <p className="text-sm text-gray-600 ml-6">None — this app uses only the Canvas API.</p>
-          </div>
-        </div>
-
-        <div className="pt-2 border-t border-gray-100">
           <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">Find Bugs? Have Improvement Requests?</p>
           <a
             href="https://docs.google.com/document/d/1OaJnIfxhQQMQTWl7jYkmXVl-81az53CYMAHg_xyFQO8/edit?tab=t.0#heading=h.bz7nzkw7vn22"
@@ -141,6 +131,16 @@ const HelpPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>
+        </div>
+
+        <div className="pt-2 border-t border-gray-100">
+          <div className="p-4 bg-gray-50 border border-gray-100 rounded-2xl">
+            <p className="text-sm font-black text-gray-900 flex items-center gap-2 mb-2">
+              <svg className="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              AI Models Used
+            </p>
+            <p className="text-sm text-gray-600 ml-6">None — this app uses only the Canvas API.</p>
+          </div>
         </div>
       </div>
     </div>
