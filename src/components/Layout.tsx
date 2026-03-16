@@ -127,6 +127,21 @@ const HelpPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => (
             <p className="text-sm text-gray-600 ml-6">None — this app uses only the Canvas API.</p>
           </div>
         </div>
+
+        <div className="pt-2 border-t border-gray-100">
+          <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">Find Bugs? Have Improvement Requests?</p>
+          <a
+            href="https://docs.google.com/document/d/1OaJnIfxhQQMQTWl7jYkmXVl-81az53CYMAHg_xyFQO8/edit?tab=t.0#heading=h.bz7nzkw7vn22"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl shadow-sm hover:bg-gray-50 transition-all"
+          >
+            <span className="font-black text-gray-900 text-sm">App Suggestions Document</span>
+            <svg className="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
