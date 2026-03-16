@@ -26,12 +26,18 @@ function isSurveyQuiz(quizType: string): boolean {
 }
 
 /**
- * Returns true when every answer on a question shares the same weight value.
+ * Returns true when every answer on a question shares the same weight value
+ * AND the question type is NOT multiple_answers_question.
+ *
  * This catches cases where Canvas assigns a default weight to all answers
  * (e.g. weight=100 for every answer in an unscored survey), which would
  * incorrectly mark every answer as "correct".
+ *
+ * Exception: multiple_answers_question legitimately allows all answers to be
+ * correct (weight=100 each), so we never suppress asterisks for that type.
  */
-function allWeightsEqual(answers: CanvasAnswer[]): boolean {
+function allWeightsEqualAndAmbiguous(answers: CanvasAnswer[], questionType: string): boolean {
+  if (questionType === 'multiple_answers_question') return false;
   if (answers.length === 0) return true;
   // A single answer is unambiguously correct — don't suppress the asterisk.
   if (answers.length === 1) return false;
@@ -132,8 +138,9 @@ function formatQuestion(
 
     // Suppress asterisks if:
     //   (A) the quiz itself is a survey type, OR
-    //   (B) all answer weights are identical (Canvas default — no meaningful distinction)
-    const hideAsterisks = suppressCorrect || allWeightsEqual(answers);
+    //   (B) all answer weights are identical for a non-multiple-answers type
+    //       (Canvas default — no meaningful distinction)
+    const hideAsterisks = suppressCorrect || allWeightsEqualAndAmbiguous(answers, qType);
 
     answers.forEach((answer, idx) => {
       const letter = indexToLetter(idx);
